@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SDS 271 — Final Projects (Spring 2026)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fafafa;
+    --fg: #1a1a1a;
+    --muted: #5a5a5a;
+    --accent: #002855;
+    --card: #ffffff;
+    --border: #e5e5e5;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.55;
+  }
+  header {
+    background: var(--accent);
+    color: #fff;
+    padding: 2.5rem 1.5rem 2rem;
+    border-bottom: 4px solid #c8102e;
+  }
+  header .wrap { max-width: 960px; margin: 0 auto; }
+  header h1 { margin: 0 0 0.4rem; font-size: 2.2rem; font-weight: 600; font-family: "Fraunces", Georgia, "Times New Roman", serif; letter-spacing: -0.01em; }
+  header p { margin: 0; opacity: 0.9; font-size: 1.05rem; }
+  header p.sub { opacity: 0.75; font-size: 0.95rem; margin-top: 0.2rem; }
+  header a.instructor-link { color: #fff; text-decoration: underline; text-decoration-color: rgba(255,255,255,0.4); text-underline-offset: 3px; }
+  header a.instructor-link:hover { text-decoration-color: #fff; }
+  main { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+  .intro { color: var(--muted); margin-bottom: 2rem; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  @media (max-width: 600px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+  .card {
+    background: var(--card);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+    border-color: var(--accent);
+  }
+  .card .thumb {
+    aspect-ratio: 16 / 10;
+    background: #f0f2f5;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .card .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #fff;
+    display: block;
+    transition: transform 0.25s ease;
+  }
+  .card:hover .thumb img { transform: scale(1.03); }
+  .card .body {
+    padding: 1.1rem 1.25rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .card .topic {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+  }
+  .card h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .card .members {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
+  }
+  .card .blurb {
+    color: var(--fg);
+    font-size: 0.92rem;
+    margin: 0 0 0.9rem;
+    flex-grow: 1;
+  }
+  .card .open {
+    font-size: 0.88rem;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  footer {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>SDS 271 — Final Projects</h1>
+      <p>Smith College &middot; Spring 2026 &middot; Instructor: <a href="https://jburroni.github.io" class="instructor-link">Javier Burroni</a> &middot; Pedagogical Partner: Nicole Choi</p>
+      <p class="sub">Student-authored Python tutorials</p>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">
+      Each project below is a Jupyter notebook tutorial written by a group of
+      students introducing a Python library through a worked example. Click a
+      card to open the rendered notebook.
+    </p>
+
+    <div class="grid">
+
+      <a class="card" href="geopandas-folium/">
+        <div class="thumb"><img src="geopandas-folium/card.png" alt="Map of bike trail connectivity across the Five College area" loading="lazy"></div>
+        <div class="body">
+          <div class="topic">Geospatial visualization</div>
+          <h2>Geopandas &amp; Folium Tutorial</h2>
+          <div class="members">Flora Resika, Karolina Suarez Aldarondo, Katarina Flöer</div>
+          <p class="blurb">A walkthrough of geopandas and folium for spatial data,
+            using the Five College area to demonstrate basic maps, choropleths,
+            line layers, and spatial joins.</p>
+          <span class="open">Open notebook &rarr;</span>
+        </div>
+      </a>
+
+      <a class="card" href="plotly/">
+        <div class="thumb"><img src="plotly/card.jpg" alt="Plotly line chart of life expectancy in Canada, Mexico, and the United States" loading="lazy"></div>
+        <div class="body">
+          <div class="topic">Interactive plotting</div>
+          <h2>Plotly Tutorial</h2>
+          <div class="members">Amber Zhang, Anna Zhao, Helen Zhou</div>
+          <p class="blurb">An introduction to Plotly Express and Graph Objects:
+            when to use Plotly, the two core interfaces, and building interactive
+            figures from a real dataset.</p>
+          <span class="open">Open notebook &rarr;</span>
+        </div>
+      </a>
+
+      <a class="card" href="scikit-learn/">
+        <div class="thumb"><img src="scikit-learn/card.png" alt="Scatter plot of country clusters by GDP and happiness score" loading="lazy"></div>
+        <div class="body">
+          <div class="topic">Machine learning</div>
+          <h2>Scikit-learn: Predicting Happiness</h2>
+          <div class="members">Aliyah Ismail, Eugenie Kawera, Doreen Musahara</div>
+          <p class="blurb">A scikit-learn tutorial that uses the World Happiness
+            Report to predict country happiness scores from indicators like GDP,
+            social support, health, and freedom.</p>
+          <span class="open">Open notebook &rarr;</span>
+        </div>
+      </a>
+
+      <a class="card" href="statsmodels/">
+        <div class="thumb"><img src="statsmodels/card.jpg" alt="OLS regression results table for a wages model" loading="lazy"></div>
+        <div class="body">
+          <div class="topic">Statistical modeling</div>
+          <h2>Statsmodels Tutorial</h2>
+          <div class="members">Tabitha Githinji, Najma Golicha</div>
+          <p class="blurb">An introduction to statsmodels for inference and
+            explanation, contrasted with R's stats package, applied to a wages
+            dataset to answer concrete research questions.</p>
+          <span class="open">Open notebook &rarr;</span>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <footer>
+    SDS 271 &middot; Smith College &middot; Spring 2026
+  </footer>
+</body>
+</html>
